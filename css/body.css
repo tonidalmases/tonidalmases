@@ -121,6 +121,10 @@
   cursor: pointer;
 }
 
+.masthead {
+  background-image: url(../assets/img/background.jpg);
+}
+
 .masthead-avatar {
   border-radius: 100%;
   border: solid 4px white;
