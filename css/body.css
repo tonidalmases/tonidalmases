@@ -50,11 +50,13 @@
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
-.resume .resume-title {
-  font-size: 26px;
-  margin-top: 20px;
+
+.resume .resume-block:first-child {
   margin-bottom: 20px;
-  color: #050d18;
+}
+
+.resume .resume-title {
+  margin-bottom: 20px;
 }
 
 .resume .resume-item {
@@ -65,12 +67,9 @@
 }
 
 .resume .resume-item h4 {
-  line-height: 18px;
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
-  color: #050d18;
-  margin-bottom: 10px;
 }
 
 .resume .resume-item h5 {
