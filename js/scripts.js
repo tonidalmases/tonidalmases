@@ -100,3 +100,5 @@ $(document).ready(function () {
     },
   });
 });
+
+$('#copyright').html(`Copyright © Toni Dalmases ${new Date().getFullYear()}`);
