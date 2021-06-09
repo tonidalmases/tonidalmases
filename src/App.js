@@ -6,6 +6,7 @@ import About from "./components/about/About";
 import Career from "./components/career/Career";
 import Education from "./components/education/Education";
 import {BrowserRouter} from "react-router-dom";
+import Courses from "./components/courses/Courses";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Skills/>
         <Career/>
         <Education/>
+        <Courses/>
       </Container>
     </BrowserRouter>
   );

@@ -30,6 +30,7 @@ const navLinks = [
   {title: 'Skills', to: '#skills'},
   {title: 'Career', to: '#career'},
   {title: 'Education', to: '#education'},
+  {title: 'Courses', to: '#courses'},
 ];
 
 function Header() {

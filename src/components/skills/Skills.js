@@ -6,8 +6,9 @@ import Section from "../shared/Section";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import {Typography} from "@material-ui/core";
-import {skillIcons} from "./skill-icons";
+import {skillsIcons} from "./skills-icons";
 import SkillIcon from "./SkillIcon";
+import {skillsItems} from "./skills-items";
 
 const useStyles = makeStyles({
   cards: {
@@ -27,36 +28,11 @@ const useStyles = makeStyles({
 
 function Skills() {
   const classes = useStyles();
-  const mainIconSize = '80px';
 
-  const skills = [
-    {
-      name: 'Angular',
-      icon: <SiAngular title="Angular" size={mainIconSize}/>,
-      description: 'Recent experience in Front End, mainly Angular 2+, for projects with different purposes and sectors.',
-      companies: ['Dynatrace', 'Schneider Electric', 'MANE', 'Alten'],
-      others: ['rxjs', 'ngrx', 'jasmine', 'jest', 'protractor'],
-    },
-    {
-      name: 'Java',
-      icon: <SiJava title="Java" size={mainIconSize}/>,
-      description: 'Long experience in Java 8 for Back End development. Use of several frameworks like JSP for creating the Front End side of web applications.',
-      companies: ['Dynatrace', 'Everis'],
-      others: ['Spring Framework', 'Hibernate', 'Selenium', 'Gson'],
-    },
-    {
-      name: 'Python',
-      icon: <SiPython title="Python" size={mainIconSize}/>,
-      description: 'Back End development in Python and Django, as well as for Machine Learning projects.',
-      companies: ['MANE', 'Alten'],
-      others: ['Django', 'django-rest-framework', 'Scikit-Learn', 'NumPy', 'Pandas'],
-    }
-  ];
-
-  const renderSkills = skills
+  const renderSkills = skillsItems
     .map((skill, index) => <SkillCard key={index} skill={skill}/>);
 
-  const renderSkillIcons = skillIcons
+  const renderSkillsIcons = skillsIcons
     .map((skill, index) => <SkillIcon key={index} skill={skill}/>);
 
   return (
@@ -73,7 +49,7 @@ function Skills() {
             </Typography>
 
             <div className={classes.skillIcons}>
-              {renderSkillIcons}
+              {renderSkillsIcons}
             </div>
           </CardContent>
         </Card>

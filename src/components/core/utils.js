@@ -30,8 +30,8 @@ const getClasses = (index, total) => {
 
 export const renderExperiences = (experiences) => {
   return experiences
-    .map((experience, index) => {
-      return (
+    .map((experience, index) =>
+      (
         <div>
           <ExperienceItem
             key={index}
@@ -41,5 +41,5 @@ export const renderExperiences = (experiences) => {
           {index < experiences.length - 1 && <Divider/>}
         </div>
       )
-    });
+    );
 };

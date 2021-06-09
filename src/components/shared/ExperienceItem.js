@@ -1,13 +1,13 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
 import {makeStyles} from "@material-ui/core/styles";
-import {FaCity, FaRegCalendarAlt, FaUniversity} from "react-icons/fa";
+import {IoCalendar, IoLocationSharp, IoSchool} from "react-icons/io5";
 
 const useStyles = makeStyles({
-  header: {
+  details: {
     marginBottom: '8px',
   },
-  headerItem: {
+  detailsItem: {
     display: 'flex',
     columnGap: '8px',
     alignItems: 'center',
@@ -23,19 +23,19 @@ function ExperienceItem({experience, className}) {
         {experience.name}
       </Typography>
 
-      <div className={classes.header}>
-        <Typography className={classes.headerItem}>
-          <FaRegCalendarAlt/> {experience.date}
+      <div className={classes.details}>
+        <Typography className={classes.detailsItem}>
+          <IoCalendar/> {experience.date}
         </Typography>
 
         {!!experience.university &&
-        <Typography className={classes.headerItem}>
-          <FaUniversity/> {experience.university}
+        <Typography className={classes.detailsItem}>
+          <IoSchool/> {experience.university}
         </Typography>
         }
 
-        <Typography className={classes.headerItem}>
-          <FaCity/> {experience.location}
+        <Typography className={classes.detailsItem}>
+          <IoLocationSharp/> {experience.location}
         </Typography>
       </div>
 
