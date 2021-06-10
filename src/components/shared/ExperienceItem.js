@@ -1,7 +1,7 @@
 import React from 'react';
-import Typography from "@material-ui/core/Typography";
-import {makeStyles} from "@material-ui/core/styles";
-import {IoCalendar, IoLocationSharp, IoSchool} from "react-icons/io5";
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import { IoCalendar, IoLocationSharp, IoSchool } from 'react-icons/io5';
 
 const useStyles = makeStyles({
   details: {
@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   },
 });
 
-function ExperienceItem({experience, className}) {
+function ExperienceItem({ experience, className }) {
   const classes = useStyles();
 
   return (
@@ -25,25 +25,23 @@ function ExperienceItem({experience, className}) {
 
       <div className={classes.details}>
         <Typography className={classes.detailsItem}>
-          <IoCalendar/> {experience.date}
+          <IoCalendar /> {experience.date}
         </Typography>
 
-        {!!experience.university &&
-        <Typography className={classes.detailsItem}>
-          <IoSchool/> {experience.university}
-        </Typography>
-        }
+        {!!experience.university && (
+          <Typography className={classes.detailsItem}>
+            <IoSchool /> {experience.university}
+          </Typography>
+        )}
 
         <Typography className={classes.detailsItem}>
-          <IoLocationSharp/> {experience.location}
+          <IoLocationSharp /> {experience.location}
         </Typography>
       </div>
 
-      <Typography>
-        {experience.description}
-      </Typography>
+      <Typography>{experience.description}</Typography>
     </div>
-  )
+  );
 }
 
 export default ExperienceItem;

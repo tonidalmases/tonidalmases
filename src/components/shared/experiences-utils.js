@@ -1,7 +1,7 @@
-import ExperienceItem from "../shared/ExperienceItem";
-import {Divider} from "@material-ui/core";
-import React from "react";
-import {makeStyles} from "@material-ui/core/styles";
+import React from 'react';
+import ExperienceItem from './ExperienceItem';
+import { Divider } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
 const experiencesUseStyles = makeStyles({
   paddingBottom: {
@@ -9,7 +9,7 @@ const experiencesUseStyles = makeStyles({
   },
   paddingTop: {
     paddingTop: '1em',
-  }
+  },
 });
 
 const getClasses = (index, total) => {
@@ -29,17 +29,14 @@ const getClasses = (index, total) => {
 };
 
 export const renderExperiences = (experiences) => {
-  return experiences
-    .map((experience, index) =>
-      (
-        <div>
-          <ExperienceItem
-            key={index}
-            experience={experience}
-            className={getClasses(index, experiences.length).join(' ')}>
-          </ExperienceItem>
-          {index < experiences.length - 1 && <Divider/>}
-        </div>
-      )
-    );
+  return experiences.map((experience, index) => (
+    <div>
+      <ExperienceItem
+        key={index}
+        experience={experience}
+        className={getClasses(index, experiences.length).join(' ')}
+      ></ExperienceItem>
+      {index < experiences.length - 1 && <Divider />}
+    </div>
+  ));
 };

@@ -1,8 +1,8 @@
 import React from 'react';
-import Typography from "@material-ui/core/Typography";
-import {FaExternalLinkAlt, FaGithub} from "react-icons/fa";
-import {IoCalendar, IoSchool, IoTime} from "react-icons/io5";
-import {makeStyles} from "@material-ui/core/styles";
+import Typography from '@material-ui/core/Typography';
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import { IoCalendar, IoSchool, IoTime } from 'react-icons/io5';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   header: {
@@ -30,41 +30,53 @@ const useStyles = makeStyles({
   },
 });
 
-function CourseItem({course}) {
+function CourseItem({ course }) {
   const classes = useStyles();
 
   return (
     <div>
       <div className={classes.header}>
-        <Typography variant="h6">
-          {course.name}
-        </Typography>
+        <Typography variant="h6">{course.name}</Typography>
 
         <div className={classes.links}>
-          <a href={course.link} target="_blank" className={classes.link}><FaExternalLinkAlt size="20px"/></a>
-          {!!course.github && <a href={course.github} target="_blank" className={classes.link}><FaGithub size="20px"/></a>}
+          <a
+            href={course.link}
+            className={classes.link}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaExternalLinkAlt size="20px" />
+          </a>
+          {!!course.github && (
+            <a
+              href={course.github}
+              className={classes.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaGithub size="20px" />
+            </a>
+          )}
         </div>
       </div>
 
       <div className={classes.details}>
         <Typography className={classes.detailsItem}>
-          <IoCalendar/> {course.date}
+          <IoCalendar /> {course.date}
         </Typography>
 
         <Typography className={classes.detailsItem}>
-          <IoSchool/> {course.platform}
+          <IoSchool /> {course.platform}
         </Typography>
 
         <Typography className={classes.detailsItem}>
-          <IoTime/> {course.time}
+          <IoTime /> {course.time}
         </Typography>
       </div>
 
-      <Typography>
-        {course.description}
-      </Typography>
+      <Typography>{course.description}</Typography>
     </div>
-  )
+  );
 }
 
 export default CourseItem;

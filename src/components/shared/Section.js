@@ -1,7 +1,7 @@
 import React from 'react';
-import Typography from "@material-ui/core/Typography";
-import {makeStyles} from "@material-ui/core/styles";
-import {Container} from "@material-ui/core";
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import { Container } from '@material-ui/core';
 
 const useStyles = makeStyles({
   section: {
@@ -9,10 +9,10 @@ const useStyles = makeStyles({
   },
   title: {
     marginBottom: '1em',
-  }
+  },
 });
 
-function Section({id, title, children}) {
+function Section({ id, title, children }) {
   const classes = useStyles();
 
   return (
@@ -21,11 +21,9 @@ function Section({id, title, children}) {
         {title}
       </Typography>
 
-      <Container>
-        {children}
-      </Container>
+      <Container>{children}</Container>
     </section>
-  )
+  );
 }
 
 export default Section;
