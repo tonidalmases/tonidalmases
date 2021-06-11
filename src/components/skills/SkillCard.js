@@ -5,6 +5,9 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
+  root: {
+    height: '100%',
+  },
   skill: {
     display: 'flex',
     justifyContent: 'center',
@@ -20,7 +23,7 @@ function SkillCard({ skill }) {
   const classes = useStyles();
 
   return (
-    <Card>
+    <Card className={classes.root}>
       <CardContent>
         <div className={classes.skill}>{skill.icon}</div>
         <Typography

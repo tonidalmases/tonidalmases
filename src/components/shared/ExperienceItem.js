@@ -1,9 +1,25 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { IoCalendar, IoLocationSharp, IoSchool } from 'react-icons/io5';
+import {
+  IoCalendar,
+  IoLocationSharp,
+  IoSchool,
+  IoBriefcase,
+} from 'react-icons/io5';
+import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles({
+  imageContainer: {
+    width: '150px',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  img: {
+    maxWidth: '100px',
+    maxHeight: '100px',
+    marginTop: '8px',
+  },
   details: {
     marginBottom: '8px',
   },
@@ -18,29 +34,46 @@ function ExperienceItem({ experience, className }) {
   const classes = useStyles();
 
   return (
-    <div className={className}>
-      <Typography variant="h6" gutterBottom={true}>
-        {experience.name}
-      </Typography>
+    <Grid container spacing={2} className={className}>
+      <Grid item className={classes.imageContainer}>
+        <img
+          src={experience.img}
+          alt={experience.name}
+          title={experience.university || experience.company}
+          className={classes.img}
+        />
+      </Grid>
 
-      <div className={classes.details}>
-        <Typography className={classes.detailsItem}>
-          <IoCalendar /> {experience.date}
+      <Grid item xs>
+        <Typography variant="h6" gutterBottom={true}>
+          {experience.name}
         </Typography>
 
-        {!!experience.university && (
+        <div className={classes.details}>
           <Typography className={classes.detailsItem}>
-            <IoSchool /> {experience.university}
+            <IoCalendar /> {experience.date}
           </Typography>
-        )}
 
-        <Typography className={classes.detailsItem}>
-          <IoLocationSharp /> {experience.location}
-        </Typography>
-      </div>
+          {!!experience.university && (
+            <Typography className={classes.detailsItem}>
+              <IoSchool /> {experience.university}
+            </Typography>
+          )}
 
-      <Typography>{experience.description}</Typography>
-    </div>
+          {!!experience.company && (
+            <Typography className={classes.detailsItem}>
+              <IoBriefcase /> {experience.company}
+            </Typography>
+          )}
+
+          <Typography className={classes.detailsItem}>
+            <IoLocationSharp /> {experience.location}
+          </Typography>
+        </div>
+
+        <Typography>{experience.description}</Typography>
+      </Grid>
+    </Grid>
   );
 }
 
