@@ -10,8 +10,8 @@ import {
 import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles({
-  imageContainer: {
-    width: '150px',
+  imgContainer: {
+    width: '200px',
     display: 'flex',
     justifyContent: 'center',
   },
@@ -19,6 +19,7 @@ const useStyles = makeStyles({
     maxWidth: '100px',
     maxHeight: '100px',
     marginTop: '8px',
+    height: 'min-content',
   },
   details: {
     marginBottom: '8px',
@@ -35,7 +36,7 @@ function ExperienceItem({ experience, className }) {
 
   return (
     <Grid container spacing={2} className={className}>
-      <Grid item className={classes.imageContainer}>
+      <Grid item className={classes.imgContainer}>
         <img
           src={experience.img}
           alt={experience.name}

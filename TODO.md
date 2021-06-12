@@ -8,6 +8,7 @@
   - [ ] Title
   - [ ] Responsive
   - [ ] Sticky
+  - [ ] Github and LinkedIn
 - [ ] Footer
 - [ ] Styling
 - [ ] i18n
