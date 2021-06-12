@@ -1,7 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Container from '@material-ui/core/Container';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -14,14 +13,13 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  title: {
+    flexGrow: 1,
+  },
   linkText: {
     textDecoration: 'none',
     textTransform: 'uppercase',
     color: 'white',
-  },
-  navbarDisplayFlex: {
-    display: 'flex',
-    justifyContent: 'space-between',
   },
 });
 
@@ -40,26 +38,19 @@ function Header() {
     <header>
       <AppBar position="static">
         <Toolbar>
-          <Container className={classes.navbarDisplayFlex}>
-            <Typography variant="h4" component="h4">
-              Home
-            </Typography>
+          <Typography variant="h4" className={classes.title}>
+            Toni Dalmases
+          </Typography>
 
-            <List component="nav" className={classes.navDisplayFlex}>
-              {navLinks.map(({ title, to }, index) => (
-                <HashLink
-                  key={index}
-                  to={to}
-                  className={classes.linkText}
-                  smooth
-                >
-                  <ListItem button>
-                    <ListItemText primary={title} />
-                  </ListItem>
-                </HashLink>
-              ))}
-            </List>
-          </Container>
+          <List component="nav" className={classes.navDisplayFlex}>
+            {navLinks.map(({ title, to }, index) => (
+              <HashLink key={index} to={to} className={classes.linkText} smooth>
+                <ListItem button>
+                  <ListItemText primary={title} />
+                </ListItem>
+              </HashLink>
+            ))}
+          </List>
         </Toolbar>
       </AppBar>
     </header>

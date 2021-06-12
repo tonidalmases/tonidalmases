@@ -5,7 +5,7 @@
 - [x] Courses section
 - [x] Skills responsive
 - [ ] Header
-  - [ ] Title
+  - [x] Title
   - [ ] Responsive
   - [ ] Sticky
   - [ ] Github and LinkedIn
