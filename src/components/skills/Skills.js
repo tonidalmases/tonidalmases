@@ -19,7 +19,7 @@ function Skills() {
   const classes = useStyles();
 
   const renderSkills = skillsItems.map((skill, index) => (
-    <Grid item sm={4}>
+    <Grid key={index} item sm={4}>
       <SkillCard key={index} skill={skill} />
     </Grid>
   ));

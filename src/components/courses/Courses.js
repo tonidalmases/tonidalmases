@@ -6,7 +6,7 @@ import { Grid } from '@material-ui/core';
 
 function Courses() {
   const renderCourses = coursesItems.map((course, index) => (
-    <Grid item sm={6} md={4}>
+    <Grid key={index} item sm={6} md={4}>
       <CourseItem key={index} course={course} />
     </Grid>
   ));
