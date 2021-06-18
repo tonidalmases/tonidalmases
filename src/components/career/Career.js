@@ -17,7 +17,7 @@ function Career() {
     <ExperienceItem
       key={index}
       experience={experience}
-      className={index < careerItems.length - 1 && classes.marginBottom}
+      className={index < careerItems.length - 1 ? classes.marginBottom : ''}
     ></ExperienceItem>
   ));
 

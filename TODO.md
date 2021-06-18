@@ -2,15 +2,20 @@
 
 - [ ] Introduction section
 - [ ] About section
+  - [ ] Styling
 - [x] Courses section
-- [x] Skills responsive
-- [ ] Header
-  - [x] Title
+- [x] Skills section
+  - [x] Responsive
+- [ ] Experiences
   - [ ] Responsive
-  - [ ] Sticky
-  - [ ] Github and LinkedIn
+- [x] Header
+  - [x] Title
+  - [x] Responsive
+  - [x] Fix on scroll
+  - [x] Github and LinkedIn
+  - [x] Space on navigating to section
 - [ ] Footer
-- [ ] Styling
+- [ ] Styling and theming
 - [ ] i18n
 - [ ] Remove unused files
 - [ ] Change page title

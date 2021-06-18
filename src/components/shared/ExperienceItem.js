@@ -21,10 +21,10 @@ const useStyles = makeStyles({
     marginTop: '8px',
     height: 'min-content',
   },
-  details: {
+  detailsContainer: {
     marginBottom: '8px',
   },
-  detailsItem: {
+  details: {
     display: 'flex',
     columnGap: '8px',
     alignItems: 'center',
@@ -50,24 +50,24 @@ function ExperienceItem({ experience, className }) {
           {experience.name}
         </Typography>
 
-        <div className={classes.details}>
-          <Typography className={classes.detailsItem}>
+        <div className={classes.detailsContainer}>
+          <Typography className={classes.details}>
             <IoCalendar /> {experience.date}
           </Typography>
 
           {!!experience.university && (
-            <Typography className={classes.detailsItem}>
+            <Typography className={classes.details}>
               <IoSchool /> {experience.university}
             </Typography>
           )}
 
           {!!experience.company && (
-            <Typography className={classes.detailsItem}>
+            <Typography className={classes.details}>
               <IoBriefcase /> {experience.company}
             </Typography>
           )}
 
-          <Typography className={classes.detailsItem}>
+          <Typography className={classes.details}>
             <IoLocationSharp /> {experience.location}
           </Typography>
         </div>

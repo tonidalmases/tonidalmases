@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     gridColumnGap: '10px',
     marginBottom: '8px',
   },
-  links: {
+  linksContainer: {
     display: 'flex',
     justifyContent: 'space-around',
     minWidth: '60px',
@@ -19,11 +19,12 @@ const useStyles = makeStyles({
   },
   link: {
     height: 'min-content',
+    color: 'black',
   },
-  details: {
+  detailsContainer: {
     marginBottom: '8px',
   },
-  detailsItem: {
+  details: {
     display: 'flex',
     columnGap: '8px',
     alignItems: 'center',
@@ -38,7 +39,7 @@ function CourseItem({ course }) {
       <div className={classes.header}>
         <Typography variant="h6">{course.name}</Typography>
 
-        <div className={classes.links}>
+        <div className={classes.linksContainer}>
           <a
             href={course.link}
             className={classes.link}
@@ -60,16 +61,16 @@ function CourseItem({ course }) {
         </div>
       </div>
 
-      <div className={classes.details}>
-        <Typography className={classes.detailsItem}>
+      <div className={classes.detailsContainer}>
+        <Typography className={classes.details}>
           <IoCalendar /> {course.date}
         </Typography>
 
-        <Typography className={classes.detailsItem}>
+        <Typography className={classes.details}>
           <IoSchool /> {course.platform}
         </Typography>
 
-        <Typography className={classes.detailsItem}>
+        <Typography className={classes.details}>
           <IoTime /> {course.time}
         </Typography>
       </div>
