@@ -1,5 +1,11 @@
 import React from 'react';
-import { makeStyles, Typography, Grid } from '@material-ui/core';
+import {
+  makeStyles,
+  useTheme,
+  useMediaQuery,
+  Typography,
+  Grid,
+} from '@material-ui/core';
 import {
   IoCalendar,
   IoLocationSharp,
@@ -31,17 +37,21 @@ const useStyles = makeStyles({
 
 function ExperienceItem({ experience, className }) {
   const classes = useStyles();
+  const theme = useTheme();
+  const smallScreen = useMediaQuery(theme.breakpoints.down('xs'));
 
   return (
     <Grid container spacing={2} className={className}>
-      <Grid item className={classes.imgContainer}>
-        <img
-          src={experience.img}
-          alt={experience.name}
-          title={experience.university || experience.company}
-          className={classes.img}
-        />
-      </Grid>
+      {!smallScreen && (
+        <Grid item className={classes.imgContainer}>
+          <img
+            src={experience.img}
+            alt={experience.name}
+            title={experience.university || experience.company}
+            className={classes.img}
+          />
+        </Grid>
+      )}
 
       <Grid item xs>
         <Typography variant="h6" gutterBottom={true}>

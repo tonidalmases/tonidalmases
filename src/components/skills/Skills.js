@@ -33,7 +33,7 @@ function Skills() {
 
   return (
     <Section id="skills" title="Skills">
-      <Grid container spacing={3}>
+      <Grid container spacing={2}>
         {renderSkills}
 
         <Grid item>

@@ -5,7 +5,7 @@
   - [ ] About
   - [x] Courses
   - [x] Skills
-  - [ ] Experiences responsive
+  - [x] Experiences responsive
 - [x] Header
   - [x] Title
   - [x] Responsive
