@@ -5,14 +5,17 @@ const useStyles = makeStyles({
   root: {
     height: '100%',
   },
+  cardContent: {
+    padding: '20px !important',
+  },
   skill: {
     display: 'flex',
     justifyContent: 'center',
-    marginBottom: 12,
+    marginBottom: 15,
   },
   companies: {
-    marginBottom: 12,
     alignText: 'center',
+    marginBottom: 12,
   },
 });
 
@@ -21,7 +24,7 @@ function SkillCard({ skill }) {
 
   return (
     <Card className={classes.root}>
-      <CardContent>
+      <CardContent className={classes.cardContent}>
         <div className={classes.skill}>{skill.icon}</div>
         <Typography
           className={classes.companies}

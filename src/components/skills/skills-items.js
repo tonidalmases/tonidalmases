@@ -7,21 +7,21 @@ export const skillsItems = [
     name: 'Angular',
     icon: <SiAngular title="Angular" size={mainIconSize} />,
     description:
-      'Recent experience in Front End, mainly Angular 2+, for projects with different purposes and sectors.',
+      'Front End experience in Angular 2+, together with well-known frameworks and libraries like RxJS, NgRx, Jest and Angular Material.',
     companies: ['Dynatrace', 'Schneider Electric', 'MANE', 'Alten'],
   },
   {
     name: 'Java',
     icon: <SiJava title="Java" size={mainIconSize} />,
     description:
-      'Long experience in Java 8 for Back End development. Use of several frameworks like JSP for creating the Front End side of web applications.',
+      'Long experience in Java 8 for Back End development. Use of Spring framework, Maven and Hibernate for the project structure and connection to the database.',
     companies: ['Dynatrace', 'Everis'],
   },
   {
     name: 'Python',
     icon: <SiPython title="Python" size={mainIconSize} />,
     description:
-      'Back End development in Python and Django, as well as for Machine Learning projects.',
+      'Back End development in Python and Django REST framework for creating APIs. Also using this language for Machine Learning projects.',
     companies: ['MANE', 'Alten'],
   },
 ];

@@ -13,6 +13,9 @@ import { skillsItems } from './skills-items';
 import { skillsIcons } from './skills-icons';
 
 const useStyles = makeStyles({
+  cardContent: {
+    padding: '20px !important',
+  },
   skillIcons: {
     textAlign: 'center',
   },
@@ -38,11 +41,7 @@ function Skills() {
 
         <Grid item>
           <Card>
-            <CardContent>
-              <Typography variant="h6" gutterBottom>
-                Some technologies I've used...
-              </Typography>
-
+            <CardContent className={classes.cardContent}>
               <div className={classes.skillIcons}>{renderSkillsIcons}</div>
             </CardContent>
           </Card>
