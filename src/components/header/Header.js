@@ -75,8 +75,8 @@ function Header() {
   };
 
   return (
-    <header>
-      <AppBar position="fixed">
+    <>
+      <AppBar component="header" position="fixed">
         <Toolbar>
           <div className={classes.titleContainer}>
             <Typography variant="h5">Toni Dalmases</Typography>
@@ -131,7 +131,7 @@ function Header() {
           <List>{linkItems(classes.colorBlack)}</List>
         </Drawer>
       )}
-    </header>
+    </>
   );
 }
 

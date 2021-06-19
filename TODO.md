@@ -12,7 +12,7 @@
   - [x] Fix on scroll
   - [x] Github and LinkedIn
   - [x] Space on navigating to section
-- [ ] Footer
+- [x] Footer
 - [ ] Theming
 - [ ] i18n
 - [ ] Page

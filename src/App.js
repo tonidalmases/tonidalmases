@@ -7,6 +7,7 @@ import Skills from './components/skills/Skills';
 import Career from './components/career/Career';
 import Education from './components/education/Education';
 import Courses from './components/courses/Courses';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Education />
         <Courses />
       </Container>
+      <Footer />
     </BrowserRouter>
   );
 }
