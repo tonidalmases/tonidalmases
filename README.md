@@ -1,5 +1,3 @@
-# Getting Started with Create React App
-
 My React portfolio webpage.
 
 - [React](https://reactjs.org/)
