@@ -1,9 +1,9 @@
 import React from 'react';
+import { Container } from '@material-ui/core';
 import { BrowserRouter } from 'react-router-dom';
 import Header from './components/header/Header';
-import Container from '@material-ui/core/Container';
-import Skills from './components/skills/Skills';
 import About from './components/about/About';
+import Skills from './components/skills/Skills';
 import Career from './components/career/Career';
 import Education from './components/education/Education';
 import Courses from './components/courses/Courses';

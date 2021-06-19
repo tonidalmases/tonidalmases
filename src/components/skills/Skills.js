@@ -1,13 +1,16 @@
 import React from 'react';
-import SkillCard from './SkillCard';
-import { makeStyles } from '@material-ui/core/styles';
+import {
+  makeStyles,
+  Card,
+  CardContent,
+  Grid,
+  Typography,
+} from '@material-ui/core';
 import Section from '../shared/Section';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import { Grid, Typography } from '@material-ui/core';
-import { skillsIcons } from './skills-icons';
+import SkillCard from './SkillCard';
 import SkillIcon from './SkillIcon';
 import { skillsItems } from './skills-items';
+import { skillsIcons } from './skills-icons';
 
 const useStyles = makeStyles({
   skillIcons: {

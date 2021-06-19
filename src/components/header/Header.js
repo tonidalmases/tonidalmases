@@ -1,15 +1,19 @@
-import { makeStyles, useMediaQuery, useTheme } from '@material-ui/core';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Typography from '@material-ui/core/Typography';
 import React, { useState } from 'react';
-import { HashLink } from 'react-router-hash-link';
-import IconButton from '@material-ui/core/IconButton';
+import {
+  makeStyles,
+  useMediaQuery,
+  useTheme,
+  AppBar,
+  Toolbar,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+  IconButton,
+  Drawer,
+} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import Drawer from '@material-ui/core/Drawer';
+import { HashLink } from 'react-router-hash-link';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const useStyles = makeStyles({

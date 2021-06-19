@@ -1,13 +1,11 @@
 # TODO
 
-- [ ] Introduction section
-- [ ] About section
-  - [ ] Styling
-- [x] Courses section
-- [x] Skills section
-  - [x] Responsive
-- [ ] Experiences
-  - [ ] Responsive
+- [ ] Sections
+  - [ ] Introduction
+  - [ ] About
+  - [x] Courses
+  - [x] Skills
+  - [ ] Experiences responsive
 - [x] Header
   - [x] Title
   - [x] Responsive
@@ -15,7 +13,12 @@
   - [x] Github and LinkedIn
   - [x] Space on navigating to section
 - [ ] Footer
-- [ ] Styling and theming
+- [ ] Theming
 - [ ] i18n
-- [ ] Remove unused files
-- [ ] Change page title
+- [ ] Page
+  - [x] Title
+  - [ ] Favicon
+- [ ] Files
+  - [ ] Test
+  - [x] Organize imports
+  - [x] Remove unused files

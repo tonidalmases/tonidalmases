@@ -1,8 +1,8 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
+import { Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import { IoCalendar, IoSchool, IoTime } from 'react-icons/io5';
-import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   header: {
