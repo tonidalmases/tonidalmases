@@ -22,3 +22,4 @@
   - [ ] Test
   - [x] Organize imports
   - [x] Remove unused files
+  - [x] Readme
