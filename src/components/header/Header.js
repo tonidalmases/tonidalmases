@@ -11,26 +11,16 @@ import {
   Typography,
   IconButton,
   Drawer,
+  Grid,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import { HashLink } from 'react-router-hash-link';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const useStyles = makeStyles({
-  navDisplayFlex: {
+  linkItems: {
     display: 'flex',
     justifyContent: 'space-between',
-  },
-  titleContainer: {
-    flexGrow: 1,
-    display: 'flex',
-    alignItems: 'center',
-    columnGap: '20px',
-  },
-  titleLinksContainer: {
-    paddingTop: '6px',
-    display: 'flex',
-    columnGap: '10px',
   },
   linkText: {
     textDecoration: 'none',
@@ -78,10 +68,12 @@ function Header() {
     <>
       <AppBar component="header" position="fixed">
         <Toolbar>
-          <div className={classes.titleContainer}>
-            <Typography variant="h5">Toni Dalmases</Typography>
+          <Grid container spacing={2}>
+            <Grid item>
+              <Typography variant="h5">Toni Dalmases</Typography>
+            </Grid>
 
-            <div className={classes.titleLinksContainer}>
+            <Grid item>
               <a
                 title="LinkedIn"
                 href="https://linkedin.com/in/tonidalmases"
@@ -91,6 +83,9 @@ function Header() {
               >
                 <FaLinkedin size="30px" />
               </a>
+            </Grid>
+
+            <Grid item>
               <a
                 title="Github"
                 href="https://github.com/tonidalmases"
@@ -100,11 +95,11 @@ function Header() {
               >
                 <FaGithub size="30px" />
               </a>
-            </div>
-          </div>
+            </Grid>
+          </Grid>
 
           {!smallScreen && (
-            <List component="nav" className={classes.navDisplayFlex}>
+            <List component="nav" className={classes.linkItems}>
               {linkItems(classes.colorWhite)}
             </List>
           )}

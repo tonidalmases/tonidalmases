@@ -54,7 +54,7 @@ function About() {
             height="100px"
             alt="Barcelona"
           />
-          <Typography>Working in Barcelona</Typography>
+          <Typography>Barcelona</Typography>
         </Grid>
       </Grid>
     </Section>
