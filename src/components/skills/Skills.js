@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  makeStyles,
-  Card,
-  CardContent,
-  Grid,
-  Typography,
-} from '@material-ui/core';
+import { makeStyles, Card, CardContent, Grid } from '@material-ui/core';
 import Section from '../shared/Section';
 import SkillCard from './SkillCard';
 import SkillIcon from './SkillIcon';

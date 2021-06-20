@@ -6,12 +6,6 @@ import {
   Typography,
   Grid,
 } from '@material-ui/core';
-import {
-  IoCalendar,
-  IoLocationSharp,
-  IoSchool,
-  IoBriefcase,
-} from 'react-icons/io5';
 import ExperienceDetails from './ExperienceDetails';
 
 const useStyles = makeStyles({

@@ -2,7 +2,7 @@
 
 - [ ] Sections
   - [ ] Introduction
-  - [ ] About
+  - [x] About
   - [x] Courses
   - [x] Skills
   - [x] Experiences responsive
