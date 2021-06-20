@@ -35,17 +35,17 @@ function About() {
             height="100px"
             alt="Web development"
           />
-          <Typography>Web developer</Typography>
+          <Typography variant="h6">Web developer</Typography>
         </Grid>
 
         <Grid item xs={6} md={3} className={classes.item}>
           <img src="images/about/team.svg" height="100px" alt="Team" />
-          <Typography>Team worker</Typography>
+          <Typography variant="h6">Team worker</Typography>
         </Grid>
 
         <Grid item xs={6} md={3} className={classes.item}>
           <img src="images/about/learning.svg" height="100px" alt="Learning" />
-          <Typography>Always learning</Typography>
+          <Typography variant="h6">Always learning</Typography>
         </Grid>
 
         <Grid item xs={6} md={3} className={classes.item}>
@@ -54,7 +54,7 @@ function About() {
             height="100px"
             alt="Barcelona"
           />
-          <Typography>Barcelona</Typography>
+          <Typography variant="h6">Barcelona</Typography>
         </Grid>
       </Grid>
     </Section>
