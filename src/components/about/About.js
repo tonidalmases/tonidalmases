@@ -4,10 +4,7 @@ import Section from '../shared/Section';
 
 const useStyles = makeStyles({
   description: {
-    marginBottom: '24px',
-  },
-  gridContainer: {
-    padding: '20px !important',
+    marginBottom: '2em',
   },
   item: {
     textAlign: 'center',
