@@ -3,6 +3,7 @@ import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import { IoCalendar, IoSchool, IoTime } from 'react-icons/io5';
+import ExperienceDetails from '../shared/ExperienceDetails';
 
 const useStyles = makeStyles({
   header: {
@@ -21,14 +22,6 @@ const useStyles = makeStyles({
     height: 'min-content',
     color: 'black',
   },
-  detailsContainer: {
-    marginBottom: '8px',
-  },
-  details: {
-    display: 'flex',
-    columnGap: '8px',
-    alignItems: 'center',
-  },
 });
 
 function CourseItem({ course }) {
@@ -45,6 +38,7 @@ function CourseItem({ course }) {
             className={classes.link}
             target="_blank"
             rel="noreferrer"
+            title="Link to course"
           >
             <FaExternalLinkAlt size="20px" />
           </a>
@@ -54,6 +48,7 @@ function CourseItem({ course }) {
               className={classes.link}
               target="_blank"
               rel="noreferrer"
+              title="Github project"
             >
               <FaGithub size="20px" />
             </a>
@@ -61,19 +56,11 @@ function CourseItem({ course }) {
         </div>
       </div>
 
-      <div className={classes.detailsContainer}>
-        <Typography className={classes.details}>
-          <IoCalendar /> {course.date}
-        </Typography>
-
-        <Typography className={classes.details}>
-          <IoSchool /> {course.platform}
-        </Typography>
-
-        <Typography className={classes.details}>
-          <IoTime /> {course.time}
-        </Typography>
-      </div>
+      <ExperienceDetails
+        date={course.date}
+        school={course.platform}
+        time={course.time}
+      />
 
       <Typography>{course.description}</Typography>
     </div>

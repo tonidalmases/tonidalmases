@@ -12,6 +12,7 @@ import {
   IoSchool,
   IoBriefcase,
 } from 'react-icons/io5';
+import ExperienceDetails from './ExperienceDetails';
 
 const useStyles = makeStyles({
   imgContainer: {
@@ -24,14 +25,6 @@ const useStyles = makeStyles({
     maxHeight: '100px',
     marginTop: '8px',
     height: 'min-content',
-  },
-  detailsContainer: {
-    marginBottom: '8px',
-  },
-  details: {
-    display: 'flex',
-    columnGap: '8px',
-    alignItems: 'center',
   },
 });
 
@@ -58,27 +51,12 @@ function ExperienceItem({ experience, className }) {
           {experience.name}
         </Typography>
 
-        <div className={classes.detailsContainer}>
-          <Typography className={classes.details}>
-            <IoCalendar /> {experience.date}
-          </Typography>
-
-          {!!experience.university && (
-            <Typography className={classes.details}>
-              <IoSchool /> {experience.university}
-            </Typography>
-          )}
-
-          {!!experience.company && (
-            <Typography className={classes.details}>
-              <IoBriefcase /> {experience.company}
-            </Typography>
-          )}
-
-          <Typography className={classes.details}>
-            <IoLocationSharp /> {experience.location}
-          </Typography>
-        </div>
+        <ExperienceDetails
+          date={experience.date}
+          school={experience.university}
+          company={experience.company}
+          location={experience.location}
+        />
 
         <Typography>{experience.description}</Typography>
       </Grid>

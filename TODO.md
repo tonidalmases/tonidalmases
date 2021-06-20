@@ -6,12 +6,13 @@
   - [x] Courses
   - [x] Skills
   - [x] Experiences responsive
-- [x] Header
+- [ ] Header
   - [x] Title
   - [x] Responsive
   - [x] Fix on scroll
   - [x] Github and LinkedIn
   - [x] Space on navigating to section
+  - [ ] Active fragment
 - [x] Footer
 - [ ] Theming
 - [ ] i18n

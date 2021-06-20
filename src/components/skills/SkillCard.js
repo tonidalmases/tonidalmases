@@ -6,7 +6,7 @@ const useStyles = makeStyles({
     height: '100%',
   },
   cardContent: {
-    padding: '20px !important',
+    padding: '24px !important',
   },
   skill: {
     display: 'flex',
