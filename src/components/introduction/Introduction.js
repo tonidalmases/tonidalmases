@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Introduction() {
-  return <div>Hello</div>;
+  return <div>Introduction section</div>;
 }
 
 export default Introduction;
