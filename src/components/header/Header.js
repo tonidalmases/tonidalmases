@@ -1,36 +1,38 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   makeStyles,
   useMediaQuery,
   useTheme,
   AppBar,
   Toolbar,
-  List,
-  ListItem,
-  ListItemText,
   Typography,
   IconButton,
   Drawer,
   Grid,
+  List,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import { HashLink } from 'react-router-hash-link';
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import useScrollPosition from '../../utils/use-scroll-position';
+import ExternalLinks from '../shared/ExternalLinks';
+import HeaderLink from './HeaderLink';
 
 const useStyles = makeStyles({
+  header: (props) =>
+    !props.isTitleDisplayed
+      ? {
+          backgroundColor: 'transparent',
+          boxShadow: 'none',
+        }
+      : undefined,
+  toolbar: (props) =>
+    !props.isTitleDisplayed
+      ? {
+          justifyContent: props.isMenuIconDisplayed ? 'right' : 'center',
+        }
+      : undefined,
   linkItems: {
     display: 'flex',
     justifyContent: 'space-between',
-  },
-  linkText: {
-    textDecoration: 'none',
-    textTransform: 'uppercase',
-  },
-  colorWhite: {
-    color: 'white',
-  },
-  colorBlack: {
-    color: 'black',
   },
 });
 
@@ -43,68 +45,60 @@ const navLinks = [
 ];
 
 function Header() {
-  const classes = useStyles();
   const theme = useTheme();
-  const smallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-  const [isDrawerOpen, setDrawerOpen] = useState(false);
+  const xsScreen = useMediaQuery(theme.breakpoints.down('xs'));
+  const smScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const linkItems = (colorClass) => {
-    return navLinks.map(({ title, to }, index) => (
-      <HashLink
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
+  const [isTitleDisplayed, setTitleDisplayed] = useState(false);
+  const [isMenuIconDisplayed, setMenuIconDisplayed] = useState(false);
+
+  const classes = useStyles({ isTitleDisplayed, isMenuIconDisplayed });
+
+  useScrollPosition((position) => {
+    setTitleDisplayed(position.y > 500);
+  }, 100);
+
+  useEffect(() => {
+    setMenuIconDisplayed(
+      (!isTitleDisplayed && xsScreen) || (isTitleDisplayed && smScreen)
+    );
+  }, [isTitleDisplayed, smScreen, xsScreen]);
+
+  const linkItems = (color) =>
+    navLinks.map(({ title, to }, index) => (
+      <HeaderLink
         key={index}
+        title={title}
         to={to}
-        className={`${classes.linkText} ${colorClass}`}
-        smooth
+        color={color}
         onClick={() => setDrawerOpen(false)}
-      >
-        <ListItem button>
-          <ListItemText primary={title} />
-        </ListItem>
-      </HashLink>
+      ></HeaderLink>
     ));
-  };
 
   return (
     <>
-      <AppBar component="header" position="fixed">
-        <Toolbar>
-          <Grid container spacing={2}>
-            <Grid item>
-              <Typography variant="h5">Toni Dalmases</Typography>
-            </Grid>
+      <AppBar component="header" position="fixed" className={classes.header}>
+        <Toolbar className={classes.toolbar}>
+          {isTitleDisplayed && (
+            <Grid container spacing={2}>
+              <Grid item>
+                <Typography variant="h5">Toni Dalmases</Typography>
+              </Grid>
 
-            <Grid item>
-              <a
-                title="LinkedIn"
-                href="https://linkedin.com/in/tonidalmases"
-                className={classes.colorWhite}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaLinkedin size="30px" />
-              </a>
+              <Grid item>
+                <ExternalLinks size="30px" />
+              </Grid>
             </Grid>
+          )}
 
-            <Grid item>
-              <a
-                title="Github"
-                href="https://github.com/tonidalmases"
-                className={classes.colorWhite}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaGithub size="30px" />
-              </a>
-            </Grid>
-          </Grid>
-
-          {!smallScreen && (
+          {!isMenuIconDisplayed && (
             <List component="nav" className={classes.linkItems}>
-              {linkItems(classes.colorWhite)}
+              {linkItems('white')}
             </List>
           )}
 
-          {smallScreen && (
+          {isMenuIconDisplayed && (
             <IconButton
               edge="start"
               color="inherit"
@@ -117,13 +111,13 @@ function Header() {
         </Toolbar>
       </AppBar>
 
-      {smallScreen && (
+      {isMenuIconDisplayed && (
         <Drawer
           anchor="top"
           open={isDrawerOpen}
           onClose={() => setDrawerOpen(false)}
         >
-          <List>{linkItems(classes.colorBlack)}</List>
+          <List>{linkItems('black')}</List>
         </Drawer>
       )}
     </>

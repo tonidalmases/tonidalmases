@@ -1,25 +1,37 @@
 import React from 'react';
-import { makeStyles, Typography, Grid, Box } from '@material-ui/core';
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import {
+  makeStyles,
+  useTheme,
+  useMediaQuery,
+  Typography,
+  Grid,
+} from '@material-ui/core';
+import ExternalLinks from '../shared/ExternalLinks';
 
 const useStyles = makeStyles({
   container: {
     position: 'relative',
   },
-  textBlock: {
+  textBlock: (props) => ({
     position: 'absolute',
     paddingRight: '50%',
     color: 'white',
     left: '5%',
-    top: '30%',
-  },
-  link: {
-    color: 'white',
-  },
+    top: props.xsScreen ? '15%' : '25%',
+  }),
+  title: (props) => ({
+    fontSize: props.xsScreen ? '2rem' : '3rem',
+  }),
+  subtitle: (props) => ({
+    fontSize: props.xsScreen ? '1rem' : '2rem',
+  }),
 });
 
 function Introduction() {
-  const classes = useStyles();
+  const theme = useTheme();
+  const xsScreen = useMediaQuery(theme.breakpoints.down('xs'));
+
+  const classes = useStyles({ xsScreen });
 
   return (
     <div className={classes.container}>
@@ -27,34 +39,16 @@ function Introduction() {
       <div className={classes.textBlock}>
         <Grid container spacing={3}>
           <Grid item xs={12}>
-            <Typography variant="h3">Toni Dalmases</Typography>
+            <Typography className={classes.title}>Toni Dalmases</Typography>
           </Grid>
           <Grid item xs={12}>
-            <Typography variant="h4">Software engineer</Typography>
+            <Typography className={classes.subtitle}>
+              Software engineer
+            </Typography>
           </Grid>
 
-          <Grid item xs={12} className={classes.linksContainer}>
-            <Box display="flex" gridColumnGap="1em">
-              <a
-                title="LinkedIn"
-                href="https://linkedin.com/in/tonidalmases"
-                className={classes.link}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaLinkedin size="40px" />
-              </a>
-
-              <a
-                title="Github"
-                href="https://github.com/tonidalmases"
-                className={classes.link}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FaGithub size="40px" />
-              </a>
-            </Box>
+          <Grid item xs={12}>
+            <ExternalLinks size="40px" />
           </Grid>
         </Grid>
       </div>

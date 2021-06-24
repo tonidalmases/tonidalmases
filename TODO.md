@@ -1,8 +1,9 @@
 # TODO
 
-- [x] Sections
+- [ ] Sections
   - [x] Introduction
-  - [x] About
+  - [ ] About
+    - [ ] Style Icon - Description
   - [x] Courses
   - [x] Skills
   - [x] Experiences responsive
@@ -12,8 +13,7 @@
   - [x] Fix on scroll
   - [x] Github and LinkedIn
   - [x] Space on navigating to section
-  - [ ] Active fragment
-  - [ ] Transparent on scroll to top
+  - [ ] Adjust transparency on scroll
 - [x] Footer
 - [ ] Theming
 - [ ] i18n
