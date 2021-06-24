@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from '@material-ui/core';
 import { BrowserRouter } from 'react-router-dom';
 import Header from './components/header/Header';
+import Introduction from './components/introduction/Introduction';
 import About from './components/about/About';
 import Skills from './components/skills/Skills';
 import Career from './components/career/Career';
@@ -13,6 +14,7 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
+      <Introduction />
       <Container>
         <About />
         <Skills />

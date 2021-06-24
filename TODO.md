@@ -1,7 +1,7 @@
 # TODO
 
-- [ ] Sections
-  - [ ] Introduction
+- [x] Sections
+  - [x] Introduction
   - [x] About
   - [x] Courses
   - [x] Skills
@@ -13,6 +13,7 @@
   - [x] Github and LinkedIn
   - [x] Space on navigating to section
   - [ ] Active fragment
+  - [ ] Transparent on scroll to top
 - [x] Footer
 - [ ] Theming
 - [ ] i18n

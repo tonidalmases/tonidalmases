@@ -41,7 +41,7 @@ function ExperienceItem({ experience, className }) {
       )}
 
       <Grid item xs>
-        <Typography variant="h6" gutterBottom={true}>
+        <Typography variant="h6" gutterBottom>
           {experience.name}
         </Typography>
 
