@@ -63,7 +63,7 @@ function Header() {
     setMenuIconDisplayed(
       (!isTitleDisplayed && xsScreen) || (isTitleDisplayed && smScreen)
     );
-  }, [isTitleDisplayed, smScreen, xsScreen]);
+  }, [isTitleDisplayed, xsScreen, smScreen]);
 
   const linkItems = (color) =>
     navLinks.map(({ title, to }, index) => (

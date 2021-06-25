@@ -3,8 +3,9 @@ import {
   makeStyles,
   useTheme,
   useMediaQuery,
+  Container,
+  Box,
   Typography,
-  Grid,
 } from '@material-ui/core';
 import ExternalLinks from '../shared/ExternalLinks';
 
@@ -12,18 +13,19 @@ const useStyles = makeStyles({
   container: {
     position: 'relative',
   },
-  textBlock: (props) => ({
+  textContainer: (props) => ({
     position: 'absolute',
-    paddingRight: '50%',
+    paddingRight: '40%',
     color: 'white',
-    left: '5%',
     top: props.xsScreen ? '15%' : '25%',
   }),
   title: (props) => ({
-    fontSize: props.xsScreen ? '2rem' : '3rem',
+    fontSize: props.xsScreen ? '2em' : '3em',
+    marginBottom: props.xsScreen ? '4px' : '8px',
   }),
   subtitle: (props) => ({
-    fontSize: props.xsScreen ? '1rem' : '2rem',
+    fontSize: props.xsScreen ? '1em' : '2em',
+    marginBottom: props.xsScreen ? '10px' : '20px',
   }),
 });
 
@@ -36,22 +38,15 @@ function Introduction() {
   return (
     <div className={classes.container}>
       <img src="images/me/me.png" alt="me" width="100%" />
-      <div className={classes.textBlock}>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Typography className={classes.title}>Toni Dalmases</Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Typography className={classes.subtitle}>
-              Software engineer
-            </Typography>
-          </Grid>
-
-          <Grid item xs={12}>
-            <ExternalLinks size="40px" />
-          </Grid>
-        </Grid>
-      </div>
+      <Container className={classes.textContainer}>
+        <Box display="flex" flexDirection="column">
+          <Typography className={classes.title}>Toni Dalmases</Typography>
+          <Typography className={classes.subtitle}>
+            Software engineer
+          </Typography>
+          <ExternalLinks size={xsScreen ? '30px' : '40px'} />
+        </Box>
+      </Container>
     </div>
   );
 }
