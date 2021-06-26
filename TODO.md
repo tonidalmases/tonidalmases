@@ -1,9 +1,9 @@
 # TODO
 
-- [ ] Sections
+- [x] Sections
   - [x] Introduction
-  - [ ] About
-    - [ ] Style Icon - Description
+  - [x] About
+    - [x] Style Icon - Description
   - [x] Courses
   - [x] Skills
   - [x] Experiences responsive
