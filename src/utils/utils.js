@@ -1,25 +1,10 @@
 const isBrowser = typeof window !== 'undefined';
 
-export function getScrollPosition() {
-  if (!isBrowser) return 0;
+export const getScrollPosition = () =>
+  isBrowser ? Math.abs(document.body.getBoundingClientRect().top) : 0;
 
-  const position = document.body.getBoundingClientRect();
+export const getElementTopPosition = (element) =>
+  isBrowser ? Math.abs(element.getBoundingClientRect().top) : 0;
 
-  return Math.abs(position.top);
-}
-
-export function getElementBottomPosition(element) {
-  if (!isBrowser) return 0;
-
-  const position = element.getBoundingClientRect();
-
-  return Math.abs(position.top);
-}
-
-export function getElementHeight(element) {
-  if (!isBrowser) return 0;
-
-  const position = element.getBoundingClientRect();
-
-  return Math.abs(position.height);
-}
+export const getElementHeight = (element) =>
+  isBrowser ? Math.abs(element.getBoundingClientRect().height) : 0;

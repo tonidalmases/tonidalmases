@@ -1,5 +1,8 @@
-import React, { forwardRef } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { useDispatch } from 'react-redux';
 import { makeStyles, Typography } from '@material-ui/core';
+import { getElementTopPosition } from '../../utils/utils';
+import { setSectionPosition } from '../../store/sections-slice';
 
 const useStyles = makeStyles({
   section: {
@@ -16,11 +19,23 @@ const useStyles = makeStyles({
   },
 });
 
-const Section = forwardRef(({ id, title, children }, ref) => {
+function Section({ id, title, children }) {
+  const sectionRef = useRef();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(
+      setSectionPosition({
+        id,
+        position: getElementTopPosition(sectionRef.current),
+      })
+    );
+  }, [sectionRef]);
+
   const classes = useStyles();
 
   return (
-    <section ref={ref} id={id} className={classes.section}>
+    <section ref={sectionRef} id={id} className={classes.section}>
       <Typography variant="h4" className={classes.title}>
         {title}
       </Typography>
@@ -28,6 +43,6 @@ const Section = forwardRef(({ id, title, children }, ref) => {
       <div className={classes.children}>{children}</div>
     </section>
   );
-});
+}
 
 export default Section;

@@ -1,27 +1,14 @@
 # TODO
 
-- [x] Sections
-  - [x] Introduction
-  - [x] About
-    - [x] Style Icon - Description
-  - [x] Courses
-  - [x] Skills
-  - [x] Experiences responsive
 - [ ] Header
-  - [x] Title
-  - [x] Responsive
-  - [x] Fix on scroll
-  - [x] Github and LinkedIn
-  - [x] Space on navigating to section
   - [ ] Adjust transparency on scroll
-- [x] Footer
+  - [ ] Link title to top of the page
 - [ ] Theming
 - [ ] i18n
 - [ ] Page
-  - [x] Title
   - [ ] Favicon
 - [ ] Files
   - [ ] Test
-  - [x] Organize imports
-  - [x] Remove unused files
-  - [x] Readme
+- [ ] Redux
+  - [ ] Reset image height on page width change
+  - [ ] Reset sections positions on page width change

@@ -3,7 +3,6 @@ import { Grid } from '@material-ui/core';
 import Section from '../shared/Section';
 import CourseItem from './CourseItem';
 import { coursesItems } from './courses-items';
-import { getElementBottomPosition } from '../../utils/utils';
 
 function Courses() {
   const renderCourses = coursesItems.map((course, index) => (
@@ -13,21 +12,11 @@ function Courses() {
   ));
 
   return (
-    <div
-      ref={(cont) => console.log('course div', getElementBottomPosition(cont))}
-    >
-      <Section
-        ref={(cont) =>
-          console.log('courses sec', getElementBottomPosition(cont))
-        }
-        id="courses"
-        title="Courses"
-      >
-        <Grid container spacing={3}>
-          {renderCourses}
-        </Grid>
-      </Section>
-    </div>
+    <Section id="courses" title="Courses">
+      <Grid container spacing={3}>
+        {renderCourses}
+      </Grid>
+    </Section>
   );
 }
 

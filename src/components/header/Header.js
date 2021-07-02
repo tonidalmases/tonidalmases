@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import {
   makeStyles,
   useMediaQuery,
@@ -12,7 +13,6 @@ import {
   List,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import useScrollPosition from '../../utils/use-scroll-position';
 import ExternalLinks from '../shared/ExternalLinks';
 import HeaderLink from './HeaderLink';
 
@@ -55,16 +55,17 @@ function Header() {
 
   const classes = useStyles({ isTitleDisplayed, isMenuIconDisplayed });
 
-  useScrollPosition((position) => {
-    console.log('scroll', position);
-    setTitleDisplayed(position > 500);
-  }, 100);
-
   useEffect(() => {
     setMenuIconDisplayed(
       (!isTitleDisplayed && xsScreen) || (isTitleDisplayed && smScreen)
     );
   }, [isTitleDisplayed, xsScreen, smScreen]);
+
+  const currentSection = useSelector((state) => state.sections.current);
+
+  useEffect(() => {
+    setTitleDisplayed(!!currentSection);
+  }, [currentSection]);
 
   const linkItems = (color) =>
     navLinks.map(({ title, to }, index) => (

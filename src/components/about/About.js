@@ -3,7 +3,6 @@ import { Container, Grid } from '@material-ui/core';
 import Section from '../shared/Section';
 import AboutItem from './AboutItem';
 import { aboutItems } from './about-items';
-import { getElementBottomPosition } from '../../utils/utils';
 
 function About() {
   const renderItems = aboutItems.map((item, index) => (
@@ -17,11 +16,7 @@ function About() {
   ));
 
   return (
-    <Section
-      ref={(cont) => console.log(getElementBottomPosition(cont))}
-      id="about"
-      title="About"
-    >
+    <Section id="about" title="About">
       <Container>
         <Grid container spacing={4}>
           {renderItems}

@@ -5,7 +5,6 @@ import SkillCard from './SkillCard';
 import SkillIcon from './SkillIcon';
 import { skillsItems } from './skills-items';
 import { skillsIcons } from './skills-icons';
-import { getElementBottomPosition } from '../../utils/utils';
 
 const useStyles = makeStyles({
   cardContent: {
@@ -30,11 +29,7 @@ function Skills() {
   ));
 
   return (
-    <Section
-      ref={(cont) => console.log('skills', getElementBottomPosition(cont))}
-      id="skills"
-      title="Skills"
-    >
+    <Section id="skills" title="Skills">
       <Grid container spacing={2}>
         {renderSkills}
 
