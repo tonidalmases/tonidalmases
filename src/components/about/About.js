@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Grid } from '@material-ui/core';
 import Section from '../shared/Section';
 import AboutItem from './AboutItem';
-import { aboutItems } from './about-items';
+import { aboutItems } from '../../data/about-items';
 
 function About() {
   const renderItems = aboutItems.map((item, index) => (
