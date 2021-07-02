@@ -56,7 +56,8 @@ function Header() {
   const classes = useStyles({ isTitleDisplayed, isMenuIconDisplayed });
 
   useScrollPosition((position) => {
-    setTitleDisplayed(position.y > 500);
+    console.log('scroll', position);
+    setTitleDisplayed(position > 500);
   }, 100);
 
   useEffect(() => {

@@ -8,13 +8,13 @@ function AboutItem({ icon, description, index }) {
   const iconLeft = index % 2 === 0;
 
   const iconItem = (
-    <Box display="flex" alignItems="center">
+    <Box display="flex" alignItems="center" key={0}>
       <img src={icon} height={xsScreen ? '75px' : '100px'} alt="About" />
     </Box>
   );
 
   const descriptionItem = (
-    <Box display="flex" alignItems="center">
+    <Box display="flex" alignItems="center" key={1}>
       <Box
         component="span"
         fontStyle="italic"

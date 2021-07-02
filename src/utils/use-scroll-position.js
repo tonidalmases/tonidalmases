@@ -1,15 +1,5 @@
 import { useRef, useLayoutEffect } from 'react';
-
-const isBrowser = typeof window !== 'undefined';
-
-function getScrollPosition() {
-  if (!isBrowser) return { x: 0, y: 0 };
-
-  const target = document.body;
-  const position = target.getBoundingClientRect();
-
-  return { x: Math.abs(position.left), y: Math.abs(position.top) };
-}
+import { getScrollPosition } from './utils';
 
 export default function useScrollPosition(effect, wait) {
   let throttleTimeout = useRef(null);
