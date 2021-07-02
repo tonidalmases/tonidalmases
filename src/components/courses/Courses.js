@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 import Section from '../shared/Section';
 import CourseItem from './CourseItem';
-import { coursesItems } from './courses-items';
+import { coursesItems } from '../../data/courses-items';
 
 function Courses() {
   const renderCourses = coursesItems.map((course, index) => (

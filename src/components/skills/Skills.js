@@ -3,8 +3,8 @@ import { makeStyles, Card, CardContent, Grid } from '@material-ui/core';
 import Section from '../shared/Section';
 import SkillCard from './SkillCard';
 import SkillIcon from './SkillIcon';
-import { skillsItems } from './skills-items';
-import { skillsIcons } from './skills-icons';
+import { skillsItems } from '../../data/skills-items';
+import { skillsIcons } from '../../data/skills-icons';
 
 const useStyles = makeStyles({
   cardContent: {

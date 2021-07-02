@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import ExperienceItem from '../shared/ExperienceItem';
 import Section from '../shared/Section';
-import { careerItems } from './career-items';
+import { careerItems } from '../../data/career-items';
 
 const useStyles = makeStyles({
   marginBottom: {
