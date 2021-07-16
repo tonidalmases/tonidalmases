@@ -19,22 +19,22 @@ const useStyles = makeStyles({
   },
 });
 
-function SkillCard({ skill }) {
+function SkillCard({ icon, description, companies }) {
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
       <CardContent className={classes.cardContent}>
-        <div className={classes.skill}>{skill.icon}</div>
+        <div className={classes.skill}>{icon}</div>
         <Typography
           className={classes.companies}
           color="textSecondary"
           align="center"
         >
-          {skill.companies.join(' • ')}
+          {companies.join(' • ')}
         </Typography>
         <Typography variant="body2" component="p">
-          {skill.description}
+          {description}
         </Typography>
       </CardContent>
     </Card>

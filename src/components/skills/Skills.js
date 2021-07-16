@@ -20,12 +20,17 @@ function Skills() {
 
   const renderSkills = skillsItems.map((skill, index) => (
     <Grid key={index} item sm={4}>
-      <SkillCard key={index} skill={skill} />
+      <SkillCard
+        key={index}
+        icon={skill.icon}
+        description={skill.description}
+        companies={skill.companies}
+      />
     </Grid>
   ));
 
   const renderSkillsIcons = skillsIcons.map((skill, index) => (
-    <SkillIcon key={index} skill={skill} />
+    <SkillIcon key={index} title={skill.title} path={skill.path} />
   ));
 
   return (

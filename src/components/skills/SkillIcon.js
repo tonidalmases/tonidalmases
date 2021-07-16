@@ -9,7 +9,7 @@ const useStyles = makeStyles({
   },
 });
 
-function SkillIcon({ skill }) {
+function SkillIcon({ title, path }) {
   const classes = useStyles();
 
   return (
@@ -19,8 +19,8 @@ function SkillIcon({ skill }) {
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <title>{skill.title}</title>
-      <path d={skill.path} />
+      <title>{title}</title>
+      <path d={path} />
     </svg>
   );
 }
