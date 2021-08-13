@@ -1,27 +1,15 @@
-import { useRef, useLayoutEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { getScrollPosition } from './utils';
 
-export default function useScrollPosition(effect, wait) {
-  let throttleTimeout = useRef(null);
-
-  const callBack = () => {
-    effect(getScrollPosition());
-    throttleTimeout.current = null;
-  };
-
+export default function useScrollPosition(callback) {
   useLayoutEffect(() => {
     const handleScroll = () => {
-      if (wait) {
-        if (throttleTimeout.current === null) {
-          throttleTimeout.current = setTimeout(callBack, wait);
-        }
-      } else {
-        callBack();
-      }
+      callback(getScrollPosition());
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  });
+  }, []);
 }

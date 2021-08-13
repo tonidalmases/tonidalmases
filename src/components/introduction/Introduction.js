@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 import {
   makeStyles,
   useTheme,
@@ -9,8 +8,6 @@ import {
   Typography,
 } from '@material-ui/core';
 import ExternalLinks from '../shared/ExternalLinks';
-import { setImageHeight } from '../../store/introduction-slice';
-import { getElementHeight } from '../../utils/utils';
 
 const useStyles = makeStyles({
   container: {
@@ -33,13 +30,6 @@ const useStyles = makeStyles({
 });
 
 function Introduction() {
-  const dispatch = useDispatch();
-
-  const imgRef = useRef();
-  useEffect(() => {
-    dispatch(setImageHeight(getElementHeight(imgRef.current)));
-  }, [imgRef]);
-
   const theme = useTheme();
   const xsScreen = useMediaQuery(theme.breakpoints.down('xs'));
 
@@ -47,7 +37,7 @@ function Introduction() {
 
   return (
     <div className={classes.container}>
-      <img ref={imgRef} src="images/me/me.png" alt="me" width="100%" />
+      <img src="images/me/me.png" alt="me" width="100%" />
       <Container className={classes.textContainer}>
         <Box display="flex" flexDirection="column">
           <Typography className={classes.title}>Toni Dalmases</Typography>
